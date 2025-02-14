@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        main{
+            display: flex;
+            justify-content: center;
+        }
+        .form-container {
+
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 440px;
+        }
+
+        h2 {
+            color: #000000;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            width: 100%;
+            max-width: 386px;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 7px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #000000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4e4e4e;
+        }
+    </style>
+    <title>таксомоторного парка</title>
+    <header>
+        <h1>Бизнес такси</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="podpiska.html">Рекомендованные тарифы</a></li>
+                <li><a href="podpiska-start.html">Тарифы</a></li>
+                <li><a href="revers.html">Связаться с поддержкой</a></li>
+                <li id="profileLink" style="display: none;" class="dropdown">
+                    <span id="usernameDisplay"></span>
+                    <div class="dropdown-content">
+                        <a href="#" id="logoutButton">Выход</a>
+                    </div>
+                </li>
+                <li><a href="login.html" id="loginLink" style="display: inline;">Вход</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+            <div class="form-container">
+                <h2>Бронирование</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Место подачи</label>
+                        <input type="text" id="name" placeholder="Введите место отправки">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Куда ехать</label>
+                        <input type="text" id="name" placeholder="Введите место доставки">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Цена</label>
+                        <input type="text" id="name" placeholder="Введите цену">
+                    </div>
+
+
+
+                    <button type="submit">Забронировать</button>
+                </form>
+            </div>
+    </main>
+
+    <footer>
+        <p>Бизнес такси</p>
+    </footer>
+
+
+    </body>
+
+</html>

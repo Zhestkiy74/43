@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="podpiska.css">
+    <style>
+        .cards-container {
+            display: grid;
+            gap: 16px; /* Расстояние между карточками */
+            padding: 16px;
+        }
+    </style>
+    <title>таксомоторного парка</title>
+    <header>
+        <h1>Бизнес такси</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="podpiska.html">Рекомендованные тарифы</a></li>
+                <li><a href="podpiska-start.html">Тарифы</a></li>
+                <li><a href="revers.html">Связаться с поддержкой</a></li>
+                <li id="profileLink" style="display: none;" class="dropdown">
+                    <span id="usernameDisplay"></span>
+                    <div class="dropdown-content">
+                        <a href="#" id="logoutButton">Выход</a>
+                    </div>
+                </li>
+                <li><a href="login.html" id="loginLink" style="display: inline;">Вход</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="cards-container" id="cards-container"></div>
+    </main>
+    <footer>
+        <p>Бизнес такси</p>
+    </footer>
+
+    <script>
+const cardsData = [
+            {
+                title: "./image 2.png",
+                duration: "Business",
+                price: "От 6 000 ₽",
+                buttonText: "Позвонить",
+                buttonText2:"Вызвать"
+            },
+            {
+                title: "./image 2.png",
+                duration: "Business",
+                price: "От 6 000 ₽",
+                buttonText: "Позвонить",
+                buttonText2:"Вызвать"
+            },
+            {
+                title: "./image 2.png",
+                duration: "Business",
+                price: "От 6 000 ₽",
+                buttonText: "Позвонить",
+                buttonText2:"Вызвать"
+            },
+
+
+        ];
+
+        const container = document.getElementById('cards-container');
+
+        cardsData.forEach(card => {
+            const cardElement = document.createElement('div');
+            cardElement.className = 'cardP';
+
+            cardElement.innerHTML = `
+                <div class= "imageOver">
+                    <img src="${card.title}" alt="${card.title}"></img>
+                </div>
+                <h1>${card.duration}</h1>
+                <p>${card.price}</p>
+                <div class="button-container">
+                <a style="visibility: hidden;"><button>${card.buttonText}</button></a>
+                <a  href="podpiska-start.html"><button href="podpiska-start.html">${card.buttonText2}</button></a>
+                </div>
+            `;
+
+            container.appendChild(cardElement);
+        });
+    </script>
+    </body>
+
+</html>
