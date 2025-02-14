@@ -12,6 +12,16 @@
             gap: 16px; /* Расстояние между карточками */
             padding: 16px;
         }
+        .imageOver{
+            position: relative;
+            width: 300px;
+            height: 144.64px;
+            overflow: hidden;
+        }
+        .imageOver img{
+            position: absolute;
+            bottom: 0;
+        }
     </style>
     <title>таксомоторного парка</title>
     <header>
@@ -41,39 +51,56 @@
     </footer>
 
     <script>
-const cardsData = [
-            {
-                title: "./image 2.png",
-                duration: "Business",
-                price: "От 6 000 ₽",
-                buttonText: "Позвонить",
-                buttonText2:"Вызвать"
-            },
-            {
-                title: "./image 2.png",
-                duration: "Business",
-                price: "От 6 000 ₽",
-                buttonText: "Позвонить",
-                buttonText2:"Вызвать"
-            },
-            {
-                title: "./image 2.png",
-                duration: "Business",
-                price: "От 6 000 ₽",
-                buttonText: "Позвонить",
-                buttonText2:"Вызвать"
-            },
 
 
+
+
+
+
+
+
+        const defaultCards = [
+            {
+                title: "./image 2.png",
+                duration: "Business",
+                price: "От 6 000 ₽",
+                buttonText: "Позвонить",
+                buttonText2: "Вызвать"
+            },
+            {
+                title: "./image 2.png",
+                duration: "Business",
+                price: "От 6 000 ₽",
+                buttonText: "Позвонить",
+                buttonText2: "Вызвать"
+            },
+            {
+                title: "./image 2.png",
+                duration: "Business",
+                price: "От 6 000 ₽",
+                buttonText: "Позвонить",
+                buttonText2: "Вызвать"
+            }
         ];
 
-        const container = document.getElementById('cards-container');
 
-        cardsData.forEach(card => {
-            const cardElement = document.createElement('div');
-            cardElement.className = 'cardP';
 
-            cardElement.innerHTML = `
+
+
+
+
+ // Функция для отображения карточек
+ function displayCards() {
+            const cardsContainer = document.getElementById('cards-container');
+            const cardsData = JSON.parse(localStorage.getItem('cardsData')) || [];
+
+            cardsContainer.innerHTML = ''; // Очищаем контейнер перед добавлением новых карточек
+
+            cardsData.forEach(card => {
+                const cardElement = document.createElement('div');
+                cardElement.classList.add('card');
+
+                cardElement.innerHTML = `
                 <div class= "imageOver">
                     <img src="${card.title}" alt="${card.title}"></img>
                 </div>
@@ -83,10 +110,14 @@ const cardsData = [
                 <a style="visibility: hidden;"><button>${card.buttonText}</button></a>
                 <a  href="podpiska-start.html"><button href="podpiska-start.html">${card.buttonText2}</button></a>
                 </div>
-            `;
+                `;
 
-            container.appendChild(cardElement);
-        });
+                cardsContainer.appendChild(cardElement);
+            });
+        }
+
+        // Инициализация отображения карточек при загрузке страницы
+        document.addEventListener('DOMContentLoaded', displayCards);
     </script>
     </body>
 
